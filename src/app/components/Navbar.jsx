@@ -36,13 +36,30 @@ export default function Navbar({ visible }) {
 
         <div className="flex items-center space-x-5">
           <motion.a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-gray-900"
+            whileHover={{ scale: 1.03 }}
+          >
+            <FaGithub className="w-5 h-5" />
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-gray-900"
+            whileHover={{ scale: 1.03 }}
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </motion.a>
+          <motion.a
             href="mailto:pranj1012@gmail.com"
             className="text-gray-600 hover:text-gray-900"
             whileHover={{ scale: 1.03 }}
           >
             <MdEmail className="w-5 h-5" />
           </motion.a>
-          {/* Other social icons */}
         </div>
       </div>
     </motion.nav>
