@@ -41,10 +41,10 @@ export default function TechStack() {
   return (
     <div className="max-w-4xl mx-auto overflow-hidden">
       <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-        Technologies
+        Skills
       </h3>
       <div className="relative h-32 overflow-hidden">
-        <div className="absolute left-0 flex w-[200%] animate-marquee items-center space-x-8">
+        <div className="absolute left-0 flex w-[200%] animate-marquee items-center space-x-1">
           {duplicatedTechStack.map((tech, index) => (
             <div 
               key={index}
@@ -68,7 +68,7 @@ export default function TechStack() {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 20s linear infinite;
+          animation: marquee 10s linear infinite;
         }
       `}</style>
     </div>

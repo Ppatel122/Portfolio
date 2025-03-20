@@ -75,7 +75,7 @@ export default function About({ sectionRef }) {
           </motion.div>
         </div>
 
-        {/* Centered Technologies */}
+        {/* Centered Technologies
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export default function About({ sectionRef }) {
           className="text-center"
         >
           <TechStack />
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

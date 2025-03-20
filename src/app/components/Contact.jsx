@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -34,6 +35,30 @@ export default function Contact() {
             <div className="flex items-center space-x-4">
               <MdLocationOn className="w-6 h-6 text-gray-600" />
               <span className="text-gray-600">New York, USA</span>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              <FaGithub className="w-6 h-6 text-gray-600" />
+              <a 
+                href="https://github.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                GitHub
+              </a>
+            </div>
+            <div className="flex items-center space-x-4">
+              <FaLinkedin className="w-6 h-6 text-gray-600" />
+              <a 
+                href="https://linkedin.com/in/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                LinkedIn
+              </a>
             </div>
           </motion.div>
         </div>
