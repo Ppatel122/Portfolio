@@ -2,64 +2,83 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useState, useEffect } from 'react';
 
-export default function Navbar({ visible }) {
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ 
-        opacity: visible ? 1 : 0,
-        y: visible ? 0 : -20
-      }}
-      transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-gray-900/90 backdrop-blur-sm border-b border-gray-700'
+          : 'bg-transparent backdrop-blur-0 border-b border-transparent'
+      }`}
     >
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <motion.span
-          className="text-gray-900 hover:text-gray-800 transition-colors font-medium cursor-pointer"
-        >
-          Pranj Patel
-        </motion.span>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="h-16 flex items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isScrolled ? 1 : 0 }}
+            className="text-gray-100 font-medium"
+          >
+            Pranj Patel
+          </motion.div>
 
-        <div className="flex space-x-6">
-          {['About', 'Projects', 'Contact'].map((link) => (
+          <motion.div
+            className="flex space-x-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isScrolled ? 1 : 0 }}
+          >
+            {['About', 'Projects', 'Contact'].map((link) => (
+              <motion.a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                className="text-gray-300 hover:text-white text-sm transition-colors"
+                whileHover={{ y: -1 }}
+              >
+                {link}
+              </motion.a>
+            ))}
+          </motion.div>
+
+          <div className="flex items-center space-x-5">
             <motion.a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
-              whileHover={{ y: -1 }}
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+              whileHover={{ scale: 1.1 }}
             >
-              {link}
+              <FaGithub className="w-6 h-6" />
             </motion.a>
-          ))}
-        </div>
-
-        <div className="flex items-center space-x-5">
-          <motion.a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900"
-            whileHover={{ scale: 1.03 }}
-          >
-            <FaGithub className="w-5 h-5" />
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900"
-            whileHover={{ scale: 1.03 }}
-          >
-            <FaLinkedin className="w-5 h-5" />
-          </motion.a>
-          <motion.a
-            href="mailto:pranj1012@gmail.com"
-            className="text-gray-600 hover:text-gray-900"
-            whileHover={{ scale: 1.03 }}
-          >
-            <MdEmail className="w-5 h-5" />
-          </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+              whileHover={{ scale: 1.1 }}
+            >
+              <FaLinkedin className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href="mailto:pranj1012@gmail.com"
+              className="text-gray-300 hover:text-white transition-colors"
+              whileHover={{ scale: 1.1 }}
+            >
+              <MdEmail className="w-6 h-6" />
+            </motion.a>
+          </div>
         </div>
       </div>
     </motion.nav>
