@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <LandingScreen />
-      {/* <Navbar /> */}
+      <Navbar />
       <About sectionRef={aboutSectionRef} />
       <Projects />
       <Contact />

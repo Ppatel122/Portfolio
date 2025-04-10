@@ -1,60 +1,51 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function LandingScreen() {
   return (
-    <div className="flex justify-center items-start h-screen overflow-hidden bg-[#0f0f0f] text-white px-4 md:px-12 lg:px-32">
-      <div className="flex w-full max-w-7xl gap-8">
-        {/* Sidebar Wrapper to vertically center */}
-        <div className="w-full md:w-1/4 flex items-center">
-          {/* Sidebar Card */}
-          <div className="bg-[#1c1c1c] p-6 rounded-2xl shadow-lg flex flex-col items-center border border-gray-500 w-full h-fit">
-            <div className="relative w-64 h-64 xl:w-64 xl:h-64 lg:w-48 lg:h-48 md:w-48 md:h-48 rounded-xl overflow-hidden">
-              <Image
-                src="/profile-ghibli.jpg"
-                alt="Pranj Patel"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <h2 className="mt-4 text-3xl font-bold text-white">Pranj Patel</h2>
-            <p className="mt-8 text-sm text-gray-400 text-center">
-              Full Stack Software Engineer passionate about creating efficient,
-              scalable solutions that solve real-world problems.
-            </p>
-            <div className="flex gap-6 mt-4 text-gray-300 text-2xl">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <FaGithub />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </a>
-              <a href="mailto:your@email.com">
-                <FaEnvelope />
-              </a>
-            </div>
+    <div className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24">
+      {/* Main Content - Adjusted for navbar removal */}
+      <div className="max-w-4xl mx-auto pt-60"> {/* Added pt-24 for top padding */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+            Hi, I'm Pranj Patel<br />
+            <span className="text-gray-400">Software Engineer</span>
+          </h1>
+
+          <div className="mt-12 space-y-4">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-2xl md:text-3xl text-gray-200"
+            >
+              Building tools that empower communities
+            </motion.p>
           </div>
-        </div>
 
-        {/* Main Content */}
-        <div className="w-full md:w-3/4 h-screen p-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-12"
           >
-            <h1 className="text-4xl md:text-5xl font-extrabold">
-              Hi, I'm <span className="text-gray-200">Pranj Patel</span>
-            </h1>
-            <p className="text-2xl mt-4 text-gray-400">
-              Full-Stack Software Engineer
-            </p>
+            <Link
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#2D2D2D] hover:bg-[#3D3D3D] px-6 py-3 rounded-full transition-all duration-300 group"
+            >
+              <span className="font-medium">Let's Connect</span>
+              <FiArrowUpRight className="w-5 h-5 transition-transform group-hover:rotate-45" />
+            </Link>
           </motion.div>
-
-          {/* Additional content can go here */}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
