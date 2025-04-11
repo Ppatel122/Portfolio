@@ -18,20 +18,26 @@ export default function Navbar() {
 
   return (
     <motion.nav
+      layout
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className={`fixed left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gray-900/90 backdrop-blur-sm border-b border-gray-700'
-          : 'bg-transparent backdrop-blur-0 border-b border-transparent'
+          ? 'top-4 rounded-lg bg-black/30 backdrop-blur-sm border border-white/25'
+          : 'top-0 rounded-none bg-transparent backdrop-blur-0 border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <motion.div
+        layout
+        className="max-w-7xl mx-auto px-4"
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
         <div className="h-16 flex items-center justify-between">
           {/* Left Section - Name */}
           <div className="flex-1">
             <motion.span
-              className="text-gray-100 font-medium text-lg"
+              className="text-white font-medium text-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
@@ -42,7 +48,7 @@ export default function Navbar() {
           {/* Center Section - Links */}
           <div className="flex-1 flex justify-center">
             <motion.div
-              className="flex space-x-2 p-1.5 rounded-full bg-gray-900/50 backdrop-blur-sm"
+              className="flex space-x-2 p-1.5 rounded-full bg-black/20 backdrop-blur-sm border border-white/25"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
@@ -50,14 +56,14 @@ export default function Navbar() {
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="relative text-gray-300 hover:text-white text-sm px-4 py-2 rounded-full transition-colors"
+                  className="relative text-white/80 hover:text-white text-sm px-4 py-2 rounded-full transition-colors"
                   onClick={() => setActiveLink(link)}
                 >
                   {link}
                   {activeLink === link && (
                     <motion.span
                       layoutId="activeSection"
-                      className="absolute inset-0 bg-gray-700/30 rounded-full"
+                      className="absolute inset-0 bg-white/10 rounded-full"
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -83,11 +89,11 @@ export default function Navbar() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  className="text-white/80 hover:text-white transition-colors relative group"
                   whileHover={{ scale: 1.1 }}
                 >
                   <item.icon className="w-5 h-5" />
-                  <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition-opacity duration-200">
+                  <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-white/80 transition-opacity duration-200">
                     {index === 0 ? 'GitHub' : index === 1 ? 'LinkedIn' : 'Email'}
                   </span>
                 </motion.a>
@@ -95,7 +101,7 @@ export default function Navbar() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.nav>
   );
 }

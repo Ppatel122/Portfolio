@@ -15,7 +15,7 @@ export default function LandingScreen() {
         >
           <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
             Hi, I'm Pranj Patel<br />
-            <span className="text-gray-400">Software Engineer</span>
+            <span className="text-gray-500">Software Engineer</span>
           </h1>
 
           <div className="mt-12 space-y-4">
@@ -25,7 +25,7 @@ export default function LandingScreen() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-2xl md:text-3xl text-gray-200"
             >
-              Building tools that empower communities
+              Building software that empowers communities
             </motion.p>
           </div>
 
