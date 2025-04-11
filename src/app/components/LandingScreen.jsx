@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import dynamic from "next/dynamic";
+const TechSphere = dynamic(() => import("./TechSphere"), { ssr: false });
 
 export default function LandingScreen() {
   return (
@@ -47,6 +49,11 @@ export default function LandingScreen() {
           </motion.div>
         </motion.div>
       </div>
+
+      <div className="mt-20 flex justify-center">
+        <TechSphere />
+       </div>
+
     </div>
   );
 }
