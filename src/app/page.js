@@ -1,10 +1,10 @@
 "use client";
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import LandingScreen from "./components/LandingScreen";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import Work from "./components/Work";
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -15,8 +15,8 @@ export default function Home() {
       <LandingScreen />
       <Navbar />
       <About sectionRef={aboutSectionRef} />
+      <Work />
       <Projects />
-      <Contact />
       <Footer />
     </div>
   );

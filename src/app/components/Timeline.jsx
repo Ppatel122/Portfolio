@@ -46,10 +46,10 @@ export default function Timeline() {
           transition={{ duration: 0.5 }}
           className="relative mb-4"
         >
-          <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="p-6 bg-[#1a1a1a] rounded-lg shadow-sm border border-[#2D2D2D] hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-lg font-semibold text-gray-900">{exp.position}</h3>
-              <div className="flex items-center space-x-2 text-gray-500">
+              <h3 className="text-lg font-semibold text-white">{exp.position}</h3>
+              <div className="flex items-center space-x-2 text-gray-400">
                 <FaCalendarAlt className="w-4 h-4" />
                 <span className="text-sm">{exp.date}</span>
               </div>
@@ -57,7 +57,7 @@ export default function Timeline() {
             
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-4">
-                <div className="relative w-10 h-10 rounded-md overflow-hidden border border-gray-200">
+                <div className="relative w-10 h-10 rounded-md overflow-hidden border border-[#2D2D2D]">
                   <Image
                     src={exp.logo}
                     alt={exp.company}
@@ -65,7 +65,7 @@ export default function Timeline() {
                     className="object-cover"
                   />
                 </div>
-                <span className="font-medium text-gray-600">{exp.company}</span>
+                <span className="font-medium text-gray-300">{exp.company}</span>
               </div>
               
               <div className="flex items-center space-x-2 text-gray-400">

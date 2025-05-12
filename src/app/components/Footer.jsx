@@ -1,16 +1,79 @@
 "use client";
+import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-black text-white py-20 border-t border-[#1a1a1a]">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full flex flex-row items-center justify-between">
-            <p className="text-sm">&copy; {new Date().getFullYear()} Pranj Patel.</p>
-            <p className="text-gray-400 text-xs text-right">
-              All product names, logos, and brands are property of their respective owners.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left Section */}
+          <div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-3xl font-bold mb-4"
+            >
+              Pranj Patel
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-gray-400 mb-6"
+            >
+              Building software that empowers communities
+            </motion.p>
+          </div>
+
+          {/* Right Section */}
+          <div>
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-xl font-semibold mb-4"
+            >
+              Feel free to reach out!
+            </motion.h3>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="flex space-x-6"
+            >
+              <a 
+                href="https://linkedin.com/in/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <FaLinkedin className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://github.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <FaGithub className="w-6 h-6" />
+              </a>
+              <a 
+                href="mailto:pranj1012@gmail.com" 
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <HiOutlineMail className="w-6 h-6" />
+              </a>
+            </motion.div>
           </div>
         </div>
+
+        {/* Copyright - Centered */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mt-12 text-gray-400"
+        >
+          © 2024 Pranj Patel. All rights reserved.
+        </motion.div>
       </div>
     </footer>
   );

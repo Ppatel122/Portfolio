@@ -2,19 +2,10 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <motion.nav
@@ -22,11 +13,7 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className={`fixed left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'top-4 rounded-lg bg-black/30 backdrop-blur-sm border border-white/25'
-          : 'top-0 rounded-none bg-transparent backdrop-blur-0 border-transparent'
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-sm"
     >
       <motion.div
         layout
@@ -52,7 +39,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              {['Home', 'About', 'Projects', 'Contact'].map((link) => (
+              {['Home', 'About', 'Work', 'Projects'].map((link) => (
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}

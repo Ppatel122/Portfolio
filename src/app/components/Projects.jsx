@@ -1,10 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaHtml5, FaCss3Alt, FaJava } from "react-icons/fa";
+import { FaGithub, FaHtml5, FaCss3Alt, FaJava, FaGraduationCap, FaBilliards } from "react-icons/fa";
 import { SiReact, SiNextdotjs, SiTypescript, SiMongodb, SiJavascript, SiAndroidstudio, SiRemix } from "react-icons/si";
-import { RiExternalLinkLine } from "react-icons/ri";
+import { RiExternalLinkLine, RiBilliardsFill } from "react-icons/ri";
 import { VscAzure } from "react-icons/vsc";
-import Image from "next/image";
+import { IoFastFoodOutline } from "react-icons/io5";
+import { TbBrandOpenai } from "react-icons/tb";
+import { MdOutlineAirplanemodeActive } from "react-icons/md";
+import { WiDayCloudy } from "react-icons/wi";
+import { GiPoolTriangle } from "react-icons/gi";
 
 const ViteIcon = () => (
     <svg className="w-4 h-4 mr-2" viewBox="0 0 32 32">
@@ -82,8 +86,8 @@ const JavaIcon = () => (
   
 const projects = [
   {
-    title: "Orqa (In Progress)",
-    date: "May 2025",
+    title: "Orqa",
+    date: "In Progress",
     tech: ["Vite", "React", "JavaScript", "MongoDB"],
     description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration to reduce teacher workload while supporting student learning.",
     image: "/orqa.jpg",
@@ -91,8 +95,8 @@ const projects = [
     live: "#"
   },
   {
-    title: "TravellR (In Progress)",
-    date: "March 2025",
+    title: "TravellR",
+    date: "In Progress",
     tech: ["Next", "React", "TypeScript", "Firebase"],
     description: "Travel planning web application combining hotel and flight searches with AI-powered activity recommendations to plan and organize trips effeciently.",
     image: "/travellr.jpg",
@@ -154,29 +158,29 @@ const techIcons = {
 };
 
 const techColors = {
-    "Vite": "text-purple-600",
-    "React": "text-cyan-600",
-    "Next": "text-black",
-    "TypeScript": "text-blue-600",
-    "MongoDB": "text-green-600",
-    "Firebase": "text-orange-600",
-    "Azure": "text-blue-600",
-    "HTML": "text-orange-600",
-    "CSS": "text-blue-600",
-    "JavaScript": "text-yellow-500",
-    "Java": "text-grey-600",
-    "Android Studio": "text-green-600",
-    "Remix": "text-black"
-  };
+    "Vite": "text-purple-400",
+    "React": "text-cyan-400",
+    "Next": "text-gray-300",
+    "TypeScript": "text-blue-400",
+    "MongoDB": "text-green-400",
+    "Firebase": "text-orange-400",
+    "Azure": "text-blue-400",
+    "HTML": "text-orange-400",
+    "CSS": "text-blue-400",
+    "JavaScript": "text-yellow-400",
+    "Java": "text-gray-300",
+    "Android Studio": "text-green-400",
+    "Remix": "text-gray-300"
+};
 
 export default function Projects() {
     return (
-      <section id="projects" className="py-20 bg-gray-50">
+      <section id="projects" className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold text-gray-900 text-center mb-12"
+            className="text-4xl font-bold text-white text-center mb-12"
           >
             Projects
           </motion.h2>
@@ -188,17 +192,29 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
+                className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]"
               >
-                <div className="relative h-64 group overflow-hidden">
-                    {/* Image with hover scaling */}
-                    <div className="relative h-full transition-transform duration-300 group-hover:scale-105">
-                        <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        />
+                <div className="relative h-64 group overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
+                    {/* Project Icon */}
+                    <div className="relative transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        {project.title === "Orqa" && (
+                            <TbBrandOpenai className="w-32 h-32 text-purple-500/80" />
+                        )}
+                        {project.title === "TravellR" && (
+                            <MdOutlineAirplanemodeActive className="w-32 h-32 text-blue-500/80" />
+                        )}
+                        {project.title === "Air Quality Dashboard" && (
+                            <WiDayCloudy className="w-32 h-32 text-green-500/80" />
+                        )}
+                        {project.title === "FoodVerse" && (
+                            <IoFastFoodOutline className="w-32 h-32 text-orange-500/80" />
+                        )}
+                        {project.title === "Newton's Cradle" && (
+                            <FaGraduationCap className="w-32 h-32 text-yellow-500/80" />
+                        )}
+                        {project.title === "Pool" && (
+                            <RiBilliardsFill className="w-32 h-32 text-cyan-500/80" />
+                        )}
                     </div>
                 
                     {/* Overlay buttons */}
@@ -206,7 +222,7 @@ export default function Projects() {
                         {project.github !== "#" && (
                         <a
                             href={project.github}
-                            className="flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-900 rounded-lg hover:bg-white transition-all shadow-md"
+                            className="flex items-center px-4 py-2 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#2a2a2a] transition-all shadow-md"
                         >
                             <FaGithub className="w-5 h-5 mr-2" />
                             Code
@@ -215,7 +231,7 @@ export default function Projects() {
                         {project.live !== "#" && (
                         <a
                             href={project.live}
-                            className="flex items-center px-4 py-2 bg-green-500/90 backdrop-blur-sm text-white rounded-lg hover:bg-green-600 transition-all shadow-md"
+                            className="flex items-center px-4 py-2 bg-purple-600/90 backdrop-blur-sm text-white rounded-lg hover:bg-purple-700 transition-all shadow-md"
                         >
                             <RiExternalLinkLine className="w-5 h-5 mr-2" />
                             Live
@@ -226,11 +242,11 @@ export default function Projects() {
   
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-                    <span className="text-sm text-gray-500">{project.date}</span>
+                    <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                    <span className="text-sm text-gray-400">{project.date}</span>
                   </div>
   
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => {
@@ -238,9 +254,9 @@ export default function Projects() {
                       return (
                         <span 
                             key={tech}
-                            className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm"
+                            className="flex items-center px-3 py-1 rounded-full bg-[#1a1a1a] text-gray-300 text-sm border border-[#2a2a2a] hover:border-purple-500/50 transition-colors"
                         >
-                            <span className={`${techColors[tech] || 'text-gray-600'}`}>
+                            <span className={`${techColors[tech] || 'text-gray-300'}`}>
                                 <Icon className="w-4 h-4 mr-2" />
                             </span>
                             {tech}
