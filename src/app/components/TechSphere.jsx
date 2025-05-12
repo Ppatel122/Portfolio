@@ -1,11 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { ViteIcon, FirebaseIcon, JavaIcon } from "./CustomIcons";
-import {
-  FaGithub,
-  FaHtml5,
-  FaCss3Alt,
-} from "react-icons/fa";
+import { ViteIcon, FirebaseIcon, JavaIcon, PythonIcon, SQLIcon, GRPCIcon, CPlusPlusIcon } from "./CustomIcons";
+import { FaGithub, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import {
   SiReact,
   SiNextdotjs,
@@ -14,50 +10,80 @@ import {
   SiJavascript,
   SiAndroidstudio,
   SiRemix,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiFlask,
+  SiDjango,
+  SiPostman,
 } from "react-icons/si";
+import { DiVisualstudio } from "react-icons/di";
 import { VscAzure } from "react-icons/vsc";
 
 const icons = [
-    { name: "HTML", icon: FaHtml5 },
-    { name: "CSS", icon: FaCss3Alt },
-    { name: "JavaScript", icon: SiJavascript },
-    { name: "TypeScript", icon: SiTypescript },
-    { name: "React", icon: SiReact },
-    { name: "Next", icon: SiNextdotjs },
-    { name: "MongoDB", icon: SiMongodb },
-    { name: "Android Studio", icon: SiAndroidstudio },
-    { name: "Remix", icon: SiRemix },
-    { name: "GitHub", icon: FaGithub },
-    { name: "Vite", icon: ViteIcon },
-    { name: "Firebase", icon: FirebaseIcon },
-    { name: "Java", icon: JavaIcon },
-    { name: "Azure", icon: VscAzure },
-  ];
-  
+  { name: "HTML", icon: FaHtml5 },
+  { name: "CSS", icon: FaCss3Alt },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: SiReact },
+  { name: "Next", icon: SiNextdotjs },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Android Studio", icon: SiAndroidstudio },
+  { name: "Remix", icon: SiRemix },
+  { name: "GitHub", icon: FaGithub },
+  { name: "Vite", icon: ViteIcon },
+  { name: "Firebase", icon: FirebaseIcon },
+  { name: "Java", icon: JavaIcon },
+  { name: "Azure", icon: VscAzure },
+  { name: "Python", icon: PythonIcon },
+  { name: "CPP", icon: CPlusPlusIcon },
+  { name: "SQL", icon: SQLIcon },
+  { name: "gRPC", icon: GRPCIcon },
+  { name: "Flask", icon: SiFlask },
+  { name: "Django", icon: SiDjango },
+  { name: "Postman", icon: SiPostman },
+  { name: "Visual Studio", icon: DiVisualstudio },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "Node", icon: SiNodedotjs },
+  { name: "Express", icon: SiExpress },
+];
 
-  const techColors = {
-    Vite: "text-purple-600",
-    React: "text-cyan-600",
-    Next: "text-white",
-    TypeScript: "text-blue-600",
-    MongoDB: "text-green-600",
-    Firebase: "text-orange-600",
-    Azure: "text-blue-600",
-    HTML: "text-orange-600",
-    CSS: "text-blue-600",
-    JavaScript: "text-yellow-500",
-    Java: "text-gray-600",
-    "Android Studio": "text-green-600",
-    Remix: "text-white",
-    GitHub: "text-white",
-  };
+const techColors = {
+  // Existing colors
+  Vite: "text-purple-600",
+  React: "text-cyan-600",
+  Next: "text-white",
+  TypeScript: "text-blue-600",
+  MongoDB: "text-green-600",
+  Firebase: "text-orange-600",
+  Azure: "text-blue-600",
+  HTML: "text-orange-600",
+  CSS: "text-blue-600",
+  JavaScript: "text-yellow-500",
+  Java: "text-gray-600",
+  "Android Studio": "text-green-600",
+  Remix: "text-white",
+  GitHub: "text-white",
+  // New color mappings
+  Tailwind: "text-teal-500",
+  Node: "text-green-600",
+  Express: "text-gray-400",
+  Flask: "text-white",
+  Django: "text-green-800",
+  Postman: "text-orange-600",
+  "Visual Studio": "text-purple-600",
+  Python: "text-blue-400",
+  CPP: "text-blue-700",
+  SQL: "text-pink-600",
+  gRPC: "text-blue-500",
+};
 
 export default function TagSphere() {
   const sphereRef = useRef(null);
   const iconRefs = useRef([]);
 
   useEffect(() => {
-    const radius = 120;
+    const radius = 180;
     const total = icons.length;
     let angleX = 0;
     let angleY = 0;
@@ -113,7 +139,7 @@ export default function TagSphere() {
         className="relative w-full h-full transform-style-preserve-3d"
       >
         {icons.map(({ name, icon: Icon }, i) => {
-            const isCustomSVG = [ViteIcon, FirebaseIcon, JavaIcon].includes(Icon);
+            const isCustomSVG = [ViteIcon, FirebaseIcon, JavaIcon, PythonIcon, CPlusPlusIcon, SQLIcon, GRPCIcon].includes(Icon);
             const colorClass = techColors[name] || "text-white";
 
             return (
