@@ -100,7 +100,7 @@ const projects = [
     tech: ["Next", "React", "TypeScript", "Firebase"],
     description: "Travel planning web application combining hotel and flight searches with AI-powered activity recommendations to plan and organize trips effeciently.",
     image: "/travellr.jpg",
-    github: "https://github.com/Ppatel122/travellr",
+    github: "#",
     live: "#"
   },
   {
