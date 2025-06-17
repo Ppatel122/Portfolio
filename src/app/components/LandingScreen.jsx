@@ -7,7 +7,7 @@ const TechSphere = dynamic(() => import("./TechSphere"), { ssr: false });
 
 export default function LandingScreen() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24">
+    <div id="home" className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 lg:gap-24 pt-24 md:pt-60">
         {/* Tech Stack Sphere - Left Side (Desktop) */}
         <div className="w-full md:w-2/5 flex justify-center md:order-first h-[400px] md:h-auto">
@@ -44,7 +44,7 @@ export default function LandingScreen() {
               className="mt-12"
             >
               <Link
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/pranj-patel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#2D2D2D] hover:bg-[#3D3D3D] px-6 py-3 rounded-full transition-all duration-300 group"

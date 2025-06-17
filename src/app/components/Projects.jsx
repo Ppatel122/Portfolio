@@ -92,7 +92,7 @@ const projects = [
     description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration to reduce teacher workload while supporting student learning.",
     image: "/orqa.jpg",
     github: "#",
-    live: "#"
+    live: "https://www.orqa.ca/"
   },
   {
     title: "TravellR",
@@ -110,7 +110,7 @@ const projects = [
     description: "Air quality monitoring application providing real-time visualization of sensor data across the globe, featuring historical trend analysis and customizable alerts.",
     image: "/air-quality.png",
     github: "https://github.com/Ppatel122/AirQualityDashboard",
-    live: "#https://edmonton-air-quality-299f003c3f64.herokuapp.com/"
+    live: "https://edmonton-air-quality-299f003c3f64.herokuapp.com/"
   },
   {
     title: "FoodVerse",

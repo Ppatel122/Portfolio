@@ -39,7 +39,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              {['Home', 'About', 'Work', 'Projects'].map((link) => (
+              {['Home', 'About', 'Work', 'Projects', 'Contact'].map((link) => (
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}
@@ -67,8 +67,8 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
             >
               {[
-                { icon: FaGithub, href: "https://github.com/yourusername" },
-                { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername" },
+                { icon: FaGithub, href: "https://github.com/Ppatel122" },
+                { icon: FaLinkedin, href: "https://linkedin.com/in/pranj-patel" },
                 { icon: MdEmail, href: "mailto:pranj1012@gmail.com" }
               ].map((item, index) => (
                 <motion.a

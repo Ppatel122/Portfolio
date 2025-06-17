@@ -5,7 +5,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-20 border-t border-[#1a1a1a]">
+    <footer id="contact" className="bg-black text-white py-20 border-t border-[#1a1a1a]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Section */}
