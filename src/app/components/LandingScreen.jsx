@@ -2,20 +2,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import dynamic from "next/dynamic";
-const TechSphere = dynamic(() => import("./TechSphere"), { ssr: false });
 
 export default function LandingScreen() {
   return (
     <div id="home" className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 lg:gap-24 pt-24 md:pt-60">
-        {/* Tech Stack Sphere - Left Side (Desktop) */}
-        <div className="w-full md:w-2/5 flex justify-center md:order-first h-[400px] md:h-auto">
-          <TechSphere />
-        </div>
-
-        {/* Text Content - Right Side (Desktop) */}
-        <div className="w-full md:w-3/5">
+      <div className="flex items-center justify-center min-h-screen">
+        {/* Text Content */}
+        <div className="w-full max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
