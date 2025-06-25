@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaGraduationCap } from "react-icons/fa";
 
 const education = [
   {
@@ -40,42 +39,32 @@ export default function About({ sectionRef }) {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-12 items-start mb-12">
-          {/* Left Column - Photo & Description */}
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex justify-center"
-            >
-              <div className="relative w-full max-w-xs">
-                <div className="rounded-2xl overflow-hidden border-4 border-[#2D2D2D] shadow-xl bg-[#1a1a1a] p-2">
+          {/* Left Column - Combined Photo and Description Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center"
+          >
+            <div className="relative w-full max-w-xs">
+              <div className="rounded-2xl border-4 border-[#2D2D2D] shadow-xl bg-[#1a1a1a] p-4">
+                <div className="rounded-xl overflow-hidden mb-4">
                   <Image
                     src='/profile-ghibli.jpg'
                     alt="Pranj Patel"
                     width={400}
                     height={400}
-                    className="w-full h-auto rounded-xl"
+                    className="w-full h-auto"
                   />
                 </div>
-                <div className="absolute inset-0 border-2 border-[#2D2D2D] rounded-2xl -z-10 translate-x-6 translate-y-6" />
+                <p className="text-gray-300 text-lg text-center">
+                  Full Stack Software Engineer Passionate about creating efficient, scalable solutions that solve real-world problems.
+                </p>
               </div>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-prose mx-auto"
-            >
-              <p className="text-gray-300 text-lg text-center lg:text-left">
-                Full Stack Software Engineer with expertise in modern web development. 
-                Passionate about creating efficient, scalable solutions that solve real-world problems.
-              </p>
-            </motion.div>
-          </div>
+              <div className="absolute inset-0 border-2 border-[#2D2D2D] rounded-2xl -z-10 translate-x-6 translate-y-6" />
+            </div>
+          </motion.div>
 
           {/* Right Column - Education */}
           <motion.div
