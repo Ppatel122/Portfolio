@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Timeline } from "./ui/timeline";
+import { GlareCard } from "./ui/glare-card";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
 
@@ -9,7 +10,7 @@ const timelineData = [
     title: "2024",
     content: (
       <div>
-        <div className="mb-8">
+        <GlareCard className="bg-[#0a0a0a] p-6">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold text-white">Junior Software QA Engineer</h3>
             <div className="flex items-center space-x-2 text-gray-400">
@@ -42,7 +43,7 @@ const timelineData = [
             <li>Performed black-box testing on new features, identifying critical bugs and ensuring smooth integration with existing functionalities before release.</li>
             <li>Designed comprehensive test plans for new application modules, ensuring thorough validation of features and adherence to quality standards throughout the development lifecycle.</li>
           </ul>
-        </div>
+        </GlareCard>
       </div>
     ),
   },
@@ -50,7 +51,7 @@ const timelineData = [
     title: "2023",
     content: (
       <div>
-        <div className="mb-8">
+        <GlareCard className="bg-[#0a0a0a] p-6">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold text-white">Software Engineer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
@@ -83,7 +84,7 @@ const timelineData = [
             <li>Implemented batch processing in all CRUD operations across the codebase, reducing overhead and improving the performance of seismic data analysis tools by 60%.</li>
             <li>Developed comprehensive unit tests for the new multi-CRUD functionality, ensuring robustness and reliability.</li>
           </ul>
-        </div>
+        </GlareCard>
       </div>
     ),
   },
@@ -91,7 +92,7 @@ const timelineData = [
     title: "2022",
     content: (
       <div>
-        <div className="mb-8">
+        <GlareCard className="bg-[#0a0a0a] p-6">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold text-white">Software Engineer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
@@ -124,7 +125,7 @@ const timelineData = [
             <li>Developed robust simulators using Python and gRPC for the messaging library, achieving a 70% increase in the development and testing efficiency of other modules.</li>
             <li>Performed various bug fixes in C++ and JavaScript on existing data monitoring systems used at the Ottawa LRT, Vancouver SkyTrain and JFK AirTrain having a daily ridership upwards of 10,000/day.</li>
           </ul>
-        </div>
+        </GlareCard>
       </div>
     ),
   },
@@ -132,7 +133,7 @@ const timelineData = [
     title: "2021",
     content: (
       <div>
-        <div className="mb-8">
+        <GlareCard className="bg-[#0a0a0a] p-6">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold text-white">Front-End Developer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
@@ -165,7 +166,7 @@ const timelineData = [
             <li>Revamped the UI of an existing AutoMark software to increase the efficiency of marking students' submissions by 40%.</li>
             <li>Re-designed the website containing the simulations and tutorials created by past co-op students and updated it to include the content created by my team.</li>
           </ul>
-        </div>
+        </GlareCard>
       </div>
     ),
   },
