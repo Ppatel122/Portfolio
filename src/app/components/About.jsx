@@ -1,6 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import { animate, motion } from "motion/react";
 import Image from "next/image";
+import React, { useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import { SiReact, SiNodedotjs, SiTypescript, SiMongodb } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
+import { PythonIcon } from "./CustomIcons";
 
 const education = [
   {
@@ -18,6 +24,102 @@ const education = [
     logo: "/UofA.png"
   }
 ];
+
+const TechStackSkeleton = () => {
+  const scale = [1, 1.1, 1];
+  const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
+  const sequence = [
+    [
+      ".circle-1",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-2",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-3",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-4",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+    [
+      ".circle-5",
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
+    ],
+  ];
+
+  useEffect(() => {
+    animate(sequence, {
+      repeat: Infinity,
+      repeatDelay: 1,
+    });
+  }, []);
+
+  return (
+    <div className="p-4 overflow-hidden h-full relative flex items-center justify-center">
+      <div className="flex flex-row shrink-0 justify-center items-center gap-2">
+        <Container className="h-8 w-8 circle-1">
+          <SiReact className="h-4 w-4 text-cyan-600" />
+        </Container>
+        <Container className="h-12 w-12 circle-2">
+          <SiNodedotjs className="h-6 w-6 text-green-600" />
+        </Container>
+        <Container className="circle-3">
+          <SiTypescript className="h-8 w-8 text-blue-600" />
+        </Container>
+        <Container className="h-12 w-12 circle-4">
+          <PythonIcon className="h-6 w-6" />
+        </Container>
+        <Container className="h-8 w-8 circle-5">
+          <SiMongodb className="h-4 w-4 text-green-600" />
+        </Container>
+      </div>
+
+    </div>
+  );
+};
+
+
+
+const Container = ({ className, children }) => {
+  return (
+    <div
+      className={cn(
+        `h-16 w-16 rounded-full flex items-center justify-center bg-[rgba(248,248,248,0.01)]
+    shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)]
+    `,
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+
 
 export default function About({ sectionRef }) {
   return (
@@ -37,80 +139,86 @@ export default function About({ sectionRef }) {
           <h2 className="text-4xl font-bold text-white">About Me</h2>
         </motion.div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-12 items-start mb-12">
-          {/* Left Column - Combined Photo and Description Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex justify-center"
-          >
-            <div className="relative w-full max-w-xs">
-              <div className="rounded-2xl border-4 border-[#2D2D2D] shadow-xl bg-[#1a1a1a] p-4">
-                <div className="rounded-xl overflow-hidden mb-4">
-                  <Image
-                    src='/profile-ghibli.jpg'
-                    alt="Pranj Patel"
-                    width={400}
-                    height={400}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <p className="text-gray-300 text-lg text-center">
-                  Full Stack Software Engineer Passionate about creating efficient, scalable solutions that solve real-world problems.
-                </p>
-              </div>
-              <div className="absolute inset-0 border-2 border-[#2D2D2D] rounded-2xl -z-10 translate-x-6 translate-y-6" />
-            </div>
-          </motion.div>
-
-          {/* Right Column - Education */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-semibold text-white text-center mb-8">
-              Education
-            </h3>
-            <div className="space-y-6">
-              {education.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-[#0a0a0a] rounded-lg p-6 border border-[#1a1a1a] hover:border-purple-500/30 transition-colors"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D]">
-                        <Image
-                          src={edu.logo}
-                          alt={edu.school}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-medium">{edu.degree}</h4>
-                        <p className="text-gray-400">{edu.school}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-gray-400 text-sm">{edu.years}</p>
-                      <p className="text-gray-500 text-sm">{edu.location}</p>
+        {/* Bento Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <BentoGrid className="grid-cols-3 md:grid-cols-3 auto-rows-[16rem]">
+            {/* Item 1 - Wide item (spans 2 columns) - Top */}
+            <BentoGridItem
+              title="Collaboration & Communication"
+              description="I prioritize client collaboration, fostering open communication"
+              className="col-span-2"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-700/20 border border-gray-500/30 p-4">
+                  <div className="flex items-center justify-center w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-purple-500">
+                      <Image
+                        src='/profile-ghibli.jpg'
+                        alt="Pranj Patel"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+                </div>
+              }
+            />
+
+            {/* Item 2 - Tall item (spans 2 rows) - Top Right */}
+            <BentoGridItem
+              title="Tech Stack"
+              description="Passionate about cutting-edge technologies"
+              className="row-span-2"
+              header={
+                <TechStackSkeleton />
+              }
+            />
+
+            {/* Item 3 - Tall item (spans 2 rows) - Middle Left */}
+            <BentoGridItem
+              title="Flexible Time Zones"
+              description="I'm very flexible with time zone communications"
+              className="row-span-2"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 p-4">
+                  <div className="flex flex-col justify-center items-center w-full space-y-2">
+                    <div className="text-xs text-gray-300">🇺🇸 USA</div>
+                    <div className="text-xs text-gray-300">🇨🇦 Canada</div>
+                    <div className="text-xs text-gray-300">Remote Work</div>
+                  </div>
+                </div>
+              }
+            />
+
+            {/* Item 4 - Small item - Middle Right */}
+            <BentoGridItem
+              title="Let's Connect"
+              description="Ready to work together on your next project"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg bg-gradient-to-br from-green-500/20 to-teal-500/20 border border-green-500/30 p-4">
+                  <div className="flex items-center justify-center w-full">
+                    <div className="text-2xl">💼</div>
+                  </div>
+                </div>
+              }
+            />
+
+            {/* Item 5 - Wide item (spans 2 columns) - Bottom */}
+            <BentoGridItem
+              title="Current Focus"
+              description="Building scalable web applications and working with modern tech stacks. Passionate about clean code and user experience."
+              className="col-span-2"
+              header={
+                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30"></div>
+              }
+            />
+          </BentoGrid>
+        </motion.div>
       </div>
     </section>
   );

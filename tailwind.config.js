@@ -5,13 +5,15 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
+    theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
     },
     fontFamily: {
       sans: ['var(--font-space-grotesk)', 'sans-serif'],

@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from 'react';
 import LandingScreen from "./components/LandingScreen";
-import Navbar from "./components/Navbar";
+import ResizableNavbar from "./components/ResizableNavbar";
 import About from "./components/About";
 import Work from "./components/Work";
 import Projects from './components/Projects';
@@ -12,8 +12,8 @@ export default function Home() {
 
   return (
     <div>
+      <ResizableNavbar />
       <LandingScreen />
-      <Navbar />
       <About sectionRef={aboutSectionRef} />
       <Projects />
       <Work />

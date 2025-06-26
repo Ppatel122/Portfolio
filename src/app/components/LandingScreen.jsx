@@ -2,55 +2,52 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import { Boxes } from "./ui/background-boxes";
+import { AuroraBackground } from "./ui/aurora-background";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 export default function LandingScreen() {
   return (
-    <div id="home" className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      <Boxes className="absolute top-0 left-0 w-full h-full z-0" />
-      <div className="flex items-center justify-center min-h-screen relative z-10">
-        {/* Text Content */}
-        <div className="w-full max-w-4xl">
+    <div id="home">
+      <AuroraBackground className="dark:bg-black bg-black">
+        <div className="w-full max-w-4xl px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6 text-white relative z-10">
               Hi, I'm Pranj Patel<br />
-              <span className="text-gray-500">Software Engineer</span>
+              <span className="text-gray-300">Software Engineer</span>
             </h1>
 
             <div className="mt-12 space-y-4">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-2xl md:text-3xl text-gray-200"
-              >
-                Building software that empowers communities
-              </motion.p>
+              <TextGenerateEffect 
+                words="Building software that empowers communities"
+                className="text-2xl md:text-3xl text-gray-100 relative z-10"
+                duration={0.6}
+                filter={true}
+              />
             </div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-12"
+              className="mt-12 relative z-10"
             >
               <Link
                 href="https://linkedin.com/in/pranj-patel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#2D2D2D] hover:bg-[#3D3D3D] px-6 py-3 rounded-full transition-all duration-300 group"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 px-6 py-3 rounded-full transition-all duration-300 group border border-white/20"
               >
-                <span className="font-medium">Let's Connect</span>
-                <FiArrowUpRight className="w-5 h-5 transition-transform group-hover:rotate-45" />
+                <span className="font-medium text-white">Let's Connect</span>
+                <FiArrowUpRight className="w-5 h-5 transition-transform group-hover:rotate-45 text-white" />
               </Link>
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </AuroraBackground>
     </div>
   );
 }

@@ -30,3 +30,17 @@ body {
     font-family: var(--font-space-grotesk);
   }
 }
+
+/* Aurora Background Animation */
+@keyframes aurora {
+  from {
+    background-position:
+      50% 50%,
+      50% 50%;
+  }
+  to {
+    background-position:
+      350% 50%,
+      350% 50%;
+  }
+}
