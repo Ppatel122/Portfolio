@@ -9,6 +9,7 @@ import { TbBrandOpenai } from "react-icons/tb";
 import { MdOutlineAirplanemodeActive } from "react-icons/md";
 import { WiDayCloudy } from "react-icons/wi";
 import { GiPoolTriangle } from "react-icons/gi";
+import { GlareCard } from "./ui/glare-card";
 
 const ViteIcon = () => (
     <svg className="w-4 h-4 mr-2" viewBox="0 0 32 32">
@@ -192,79 +193,84 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]"
               >
-                <div className="relative h-64 group overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
-                    {/* Project Icon */}
-                    <div className="relative transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                        {project.title === "Orqa" && (
-                            <TbBrandOpenai className="w-32 h-32 text-purple-500/80" />
-                        )}
-                        {project.title === "TravellR" && (
-                            <MdOutlineAirplanemodeActive className="w-32 h-32 text-blue-500/80" />
-                        )}
-                        {project.title === "Air Quality Dashboard" && (
-                            <WiDayCloudy className="w-32 h-32 text-green-500/80" />
-                        )}
-                        {project.title === "FoodVerse" && (
-                            <IoFastFoodOutline className="w-32 h-32 text-orange-500/80" />
-                        )}
-                        {project.title === "Newton's Cradle" && (
-                            <FaGraduationCap className="w-32 h-32 text-yellow-500/80" />
-                        )}
-                        {project.title === "Pool" && (
-                            <RiBilliardsFill className="w-32 h-32 text-cyan-500/80" />
-                        )}
-                    </div>
-                
-                    {/* Overlay buttons */}
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                        {project.github !== "#" && (
-                        <a
-                            href={project.github}
-                            className="flex items-center px-4 py-2 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#2a2a2a] transition-all shadow-md"
-                        >
-                            <FaGithub className="w-5 h-5 mr-2" />
-                            Code
-                        </a>
-                        )}
-                        {project.live !== "#" && (
-                        <a
-                            href={project.live}
-                            className="flex items-center px-4 py-2 bg-purple-600/90 backdrop-blur-sm text-white rounded-lg hover:bg-purple-700 transition-all shadow-md"
-                        >
-                            <RiExternalLinkLine className="w-5 h-5 mr-2" />
-                            Live
-                        </a>
-                        )}
-                    </div>
-                </div>
-  
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                    <span className="text-sm text-gray-400">{project.date}</span>
+                <GlareCard className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]">
+                  <div className="relative h-64 group overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
+                      {/* Project Icon */}
+                      <div className="relative transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                          {project.title === "Orqa" && (
+                              <TbBrandOpenai className="w-32 h-32 text-purple-500/80" />
+                          )}
+                          {project.title === "TravellR" && (
+                              <MdOutlineAirplanemodeActive className="w-32 h-32 text-blue-500/80" />
+                          )}
+                          {project.title === "Air Quality Dashboard" && (
+                              <WiDayCloudy className="w-32 h-32 text-green-500/80" />
+                          )}
+                          {project.title === "FoodVerse" && (
+                              <IoFastFoodOutline className="w-32 h-32 text-orange-500/80" />
+                          )}
+                          {project.title === "Newton's Cradle" && (
+                              <FaGraduationCap className="w-32 h-32 text-yellow-500/80" />
+                          )}
+                          {project.title === "Pool" && (
+                              <RiBilliardsFill className="w-32 h-32 text-cyan-500/80" />
+                          )}
+                      </div>
+                  
+                      {/* Overlay buttons */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-50">
+                          {project.github !== "#" && (
+                          <a
+                              href={project.github}
+                              className="flex items-center px-4 py-2 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#2a2a2a] transition-all shadow-md relative z-50"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                              <FaGithub className="w-5 h-5 mr-2" />
+                              Code
+                          </a>
+                          )}
+                          {project.live !== "#" && (
+                          <a
+                              href={project.live}
+                              className="flex items-center px-4 py-2 bg-purple-600/90 backdrop-blur-sm text-white rounded-lg hover:bg-purple-700 transition-all shadow-md relative z-50"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                              <RiExternalLinkLine className="w-5 h-5 mr-2" />
+                              Live
+                          </a>
+                          )}
+                      </div>
                   </div>
-  
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => {
-                      const Icon = techIcons[tech] || FaGithub;
-                      return (
-                        <span 
-                            key={tech}
-                            className="flex items-center px-3 py-1 rounded-full bg-[#1a1a1a] text-gray-300 text-sm border border-[#2a2a2a] hover:border-purple-500/50 transition-colors"
-                        >
-                            <span className={`${techColors[tech] || 'text-gray-300'}`}>
-                                <Icon className="w-4 h-4 mr-2" />
-                            </span>
-                            {tech}
-                        </span>
-                      )
-                    })}
+
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                      <span className="text-sm text-gray-400">{project.date}</span>
+                    </div>
+
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((tech) => {
+                        const Icon = techIcons[tech] || FaGithub;
+                        return (
+                          <span 
+                              key={tech}
+                              className="flex items-center px-3 py-1 rounded-full bg-[#1a1a1a] text-gray-300 text-sm border border-[#2a2a2a] hover:border-purple-500/50 transition-colors"
+                          >
+                              <span className={`${techColors[tech] || 'text-gray-300'}`}>
+                                  <Icon className="w-4 h-4 mr-2" />
+                              </span>
+                              {tech}
+                          </span>
+                        )
+                      })}
+                    </div>
                   </div>
-                </div>
+                </GlareCard>
               </motion.div>
             ))}
           </div>
