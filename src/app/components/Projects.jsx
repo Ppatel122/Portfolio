@@ -90,7 +90,7 @@ const projects = [
     title: "Orqa",
     date: "In Progress",
     tech: ["Vite", "React", "JavaScript", "MongoDB"],
-    description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration to reduce teacher workload while supporting student learning.",
+    description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration between teachers and students to reduce workload while supporting student learning.",
     image: "/orqa.jpg",
     github: "#",
     live: "https://www.orqa.ca/"
@@ -99,7 +99,7 @@ const projects = [
     title: "TravellR",
     date: "In Progress",
     tech: ["Next", "React", "TypeScript", "Firebase"],
-    description: "Travel planning web application combining hotel and flight searches with AI-powered activity recommendations to plan and organize trips effeciently.",
+    description: "Travel planning web application combining comprehensive hotel and flight searches with AI-powered activity recommendations to plan and organize trips efficiently and seamlessly for travelers.",
     image: "/travellr.jpg",
     github: "#",
     live: "#"
@@ -108,7 +108,7 @@ const projects = [
     title: "Air Quality Dashboard",
     date: "April 2024",
     tech: ["Remix", "React", "JavaScript", "Azure"],
-    description: "Air quality monitoring application providing real-time visualization of sensor data across the globe, featuring historical trend analysis and customizable alerts.",
+    description: "Air quality monitoring application providing real-time visualization of environmental sensor data across the globe, featuring comprehensive historical trend analysis and customizable alert notifications for users.",
     image: "/air-quality.png",
     github: "https://github.com/Ppatel122/AirQualityDashboard",
     live: "https://edmonton-air-quality-299f003c3f64.herokuapp.com/"
@@ -117,7 +117,7 @@ const projects = [
     title: "FoodVerse",
     date: "November 2022",
     tech: ["Java", "Android Studio", "Firebase"],
-    description: "Android application reducing food wastage through secure user authenticated ingredient tracking, recipe creation, meal planning and shopping lists.",
+    description: "Android application reducing food wastage through secure user authenticated ingredient tracking, comprehensive recipe creation, detailed meal planning and organized shopping lists.",
     image: "/foodverse.png",
     github: "https://github.com/CMPUT301F22T15/Foodverse",
     live: "#"
@@ -126,7 +126,7 @@ const projects = [
     title: "Newton's Cradle",
     date: "August 2021",
     tech: ["HTML", "CSS", "JavaScript"],
-    description: "Educational Newton's Cradle simulation allowing adjustment of physics parameters to analyze collision behavior, developed for the University of Alberta's Mec E 265 course.",
+    description: "Educational Newton's Cradle simulation allowing dynamic adjustment of physics parameters to analyze collision behavior and momentum transfer, developed for the University of Alberta's Mec E 265 course.",
     image: "/newtons-cradle.png",
     github: "https://github.com/Ppatel122/Cradle",
     live: "https://sites.ualberta.ca/~dnobes/Teaching_Section/NOBES_SIM_Newton.html"
@@ -135,7 +135,7 @@ const projects = [
     title: "Pool",
     date: "June 2021",
     tech: ["HTML", "CSS", "JavaScript"],
-    description: "Educational Pool simulation allowing adjustment of physics parameters to analyze collision behavior, developed for the University of Alberta's Mec E 265 course.",
+    description: "Educational Pool simulation allowing dynamic adjustment of physics parameters to analyze collision behavior and ball mechanics, developed for the University of Alberta's Mec E 265 course.",
     image: "/pool.png",
     github: "https://github.com/Ppatel122/Pool",
     live: "https://sites.ualberta.ca/~dnobes/Teaching_Section/NOBES_SIM_Pool.html"
@@ -194,7 +194,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <GlareCard className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]">
+                  <GlareCard className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]">
                   <div className="relative h-64 group overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
                       {/* Project Icon */}
                       <div className="relative transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -219,11 +219,11 @@ export default function Projects() {
                       </div>
                   
                       {/* Overlay buttons */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-50">
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
                           {project.github !== "#" && (
                           <a
                               href={project.github}
-                              className="flex items-center px-4 py-2 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#2a2a2a] transition-all shadow-md relative z-50"
+                              className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all shadow-lg border border-gray-600"
                               target="_blank"
                               rel="noopener noreferrer"
                           >
@@ -234,7 +234,7 @@ export default function Projects() {
                           {project.live !== "#" && (
                           <a
                               href={project.live}
-                              className="flex items-center px-4 py-2 bg-purple-600/90 backdrop-blur-sm text-white rounded-lg hover:bg-purple-700 transition-all shadow-md relative z-50"
+                              className="flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all shadow-lg border border-purple-500"
                               target="_blank"
                               rel="noopener noreferrer"
                           >

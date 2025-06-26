@@ -17,7 +17,7 @@ export default function LandingScreen() {
           >
             <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6 text-white relative z-10">
               Hi, I'm Pranj Patel<br />
-              <span className="text-gray-300">Software Engineer</span>
+              <span className="text-gray-500">Software Engineer</span>
             </h1>
 
             <div className="mt-12 space-y-4">
