@@ -2,11 +2,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import { Boxes } from "./ui/background-boxes";
 
 export default function LandingScreen() {
   return (
-    <div id="home" className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24">
-      <div className="flex items-center justify-center min-h-screen">
+    <div id="home" className="min-h-screen bg-[#0f0f0f] text-white px-6 md:px-12 lg:px-24 relative overflow-hidden">
+      <Boxes className="absolute top-0 left-0 w-full h-full z-0" />
+      <div className="flex items-center justify-center min-h-screen relative z-10">
         {/* Text Content */}
         <div className="w-full max-w-4xl">
           <motion.div

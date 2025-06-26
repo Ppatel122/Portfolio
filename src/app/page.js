@@ -15,8 +15,8 @@ export default function Home() {
       <LandingScreen />
       <Navbar />
       <About sectionRef={aboutSectionRef} />
-      <Work />
       <Projects />
+      <Work />
       <Footer />
     </div>
   );
