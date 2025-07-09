@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { AuroraBackground } from "./ui/aurora-background";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { ContainerTextFlip } from "./ui/container-text-flip";
 
 export default function LandingScreen() {
   return (
@@ -21,11 +21,14 @@ export default function LandingScreen() {
             </h1>
 
             <div className="mt-12 space-y-4">
-              <TextGenerateEffect 
-                words="Building software that empowers communities"
+              <ContainerTextFlip 
+                words={[
+                  "Building software that empowers communities",
+                  "Solving the world's most difficult problems",
+                  "Creating innovative solutions that matter"
+                ]}
                 className="text-2xl md:text-3xl text-gray-100 relative z-10"
-                duration={0.6}
-                filter={true}
+                duration={3000}
               />
             </div>
 
