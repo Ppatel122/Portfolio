@@ -14,6 +14,12 @@ export default {
       animation: {
         aurora: "aurora 60s linear infinite",
       },
+      backgroundImage: {
+        "dot-white": "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)",
+      },
+      backgroundSize: {
+        "dot": "20px 20px",
+      },
     },
     fontFamily: {
       sans: ['var(--font-space-grotesk)', 'sans-serif'],
