@@ -85,7 +85,7 @@ export const MacbookWindow = ({
           </div>
 
           {/* Window Content */}
-          <div className="p-10 md:p-14 lg:p-20 min-h-[550px] md:min-h-[600px] bg-[#060917]">
+          <div className="p-10 md:p-14 lg:p-20 min-h-[550px] md:min-h-[600px] bg-[#100c0c]">
             {children}
           </div>
         </motion.div>
