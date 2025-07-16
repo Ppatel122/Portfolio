@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { Timeline } from "./ui/timeline";
 import { GlareCard } from "./ui/glare-card";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
@@ -175,31 +175,57 @@ const timelineData = [
 
 export default function Work() {
   const containerRef = useRef(null);
+  const [transformValues, setTransformValues] = useState({
+    translateY: 0,
+    scaleX: 1,
+    scaleY: 1,
+    borderRadius: 0
+  });
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   });
 
-  // Transform values for the sliding effect - slide up to reveal contact section
-  const y = useTransform(scrollYProgress, [0.9, 1], [0, -400]);
-  const scaleX = useTransform(scrollYProgress, [0.9, 1], [1, 0.85]);
-  const scaleY = useTransform(scrollYProgress, [0.9, 1], [1, 0.95]);
-  const borderRadius = useTransform(scrollYProgress, [0.9, 1], [48, 80]);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("Scroll progress:", latest);
+    
+    if (latest >= 0.9) {
+      const progress = (latest - 0.9) / 0.1; // 0 to 1 over the last 10%
+      console.log("Animation progress:", progress);
+      
+      setTransformValues({
+        translateY: -400 * progress,
+        scaleX: 1 - (0.15 * progress),
+        scaleY: 1 - (0.05 * progress),
+        borderRadius: 80 * progress
+      });
+    } else {
+      setTransformValues({
+        translateY: 0,
+        scaleX: 1,
+        scaleY: 1,
+        borderRadius: 0
+      });
+    }
+  });
+
+  console.log("Current transform values:", transformValues);
 
   return (
-          <motion.section 
-        ref={containerRef}
-        id="work" 
-        style={{ 
-          y, 
-          scaleX, 
-          scaleY,
-          borderBottomLeftRadius: borderRadius,
-          borderBottomRightRadius: borderRadius
-        }}
-        className="relative bg-black shadow-2xl z-30"
-      >
+    <section 
+      ref={containerRef}
+      id="work" 
+      className="relative bg-black shadow-2xl z-30 hover:scale-90 hover:rounded-3xl"
+      style={{
+        transform: `translateY(${transformValues.translateY}px) scale(${transformValues.scaleX}, ${transformValues.scaleY})`,
+        borderBottomLeftRadius: `${transformValues.borderRadius}px`,
+        borderBottomRightRadius: `${transformValues.borderRadius}px`,
+        transformOrigin: 'center',
+        transition: 'all 0.3s ease-out'
+      }}
+    >
       <Timeline data={timelineData} />
-    </motion.section>
+    </section>
   );
 } 

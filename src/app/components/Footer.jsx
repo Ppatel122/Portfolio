@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="sticky bottom-0 bg-white text-black py-20 min-h-[50vh] flex items-end z-10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
           {/* Left Section */}
           <div className="flex flex-col items-center md:items-end text-center md:text-left">
             <div className="max-w-md">
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:items-start md:ml-12 lg:ml-28">
             <div className="max-w-md w-full flex flex-col items-center md:items-start">
               <motion.h3 
                 initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function Footer() {
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="flex justify-center space-x-8"
+                className="flex justify-center md:justify-start space-x-8"
               >
                 <a 
                   href="https://linkedin.com/in/pranj-patel" 
