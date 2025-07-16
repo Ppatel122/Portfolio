@@ -8,7 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 
 interface NavbarProps {
@@ -56,6 +56,16 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     offset: ["start start", "end start"],
   });
   const [visible, setVisible] = useState<boolean>(false);
+  const [startupVisible, setStartupVisible] = useState<boolean>(false);
+
+  // Startup animation timer - after text content finishes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartupVisible(true);
+    }, 4200); // Show after "Let's Connect" button finishes (2.3s start + 0.8s duration + 0.1s buffer)
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {
@@ -65,20 +75,24 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     }
   });
 
+  // Show navbar after startup time OR when scrolled (whichever comes first)
+  const isVisible = startupVisible || visible;
+
   return (
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("fixed inset-x-0 top-0 z-[100] w-full", className)}
+      initial={{ opacity: 0 }}
       animate={{
-        opacity: visible ? 1 : 0,
+        opacity: isVisible ? 1 : 0,
       }}
       transition={{
-        duration: 0.6,
+        duration: 1.0,
         ease: "easeOut"
       }}
       style={{
-        pointerEvents: visible ? 'auto' : 'none'
+        pointerEvents: isVisible ? 'auto' : 'none'
       }}
     >
       {React.Children.map(children, (child) =>
