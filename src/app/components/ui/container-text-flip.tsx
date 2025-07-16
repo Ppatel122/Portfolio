@@ -36,7 +36,7 @@ export const ContainerTextFlip = ({
             duration: 0.5, 
             ease: "easeInOut" 
           }}
-          className="absolute inset-0 flex items-center"
+          className="absolute inset-0 flex items-center justify-center"
         >
           {words[currentIndex]}
         </motion.div>
