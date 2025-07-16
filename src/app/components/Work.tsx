@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Timeline } from "./ui/timeline";
 import { GlareCard } from "./ui/glare-card";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
@@ -173,9 +174,32 @@ const timelineData = [
 ];
 
 export default function Work() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Transform values for the sliding effect - slide up to reveal contact section
+  const y = useTransform(scrollYProgress, [0.9, 1], [0, -400]);
+  const scaleX = useTransform(scrollYProgress, [0.9, 1], [1, 0.85]);
+  const scaleY = useTransform(scrollYProgress, [0.9, 1], [1, 0.95]);
+  const borderRadius = useTransform(scrollYProgress, [0.9, 1], [48, 80]);
+
   return (
-    <section id="work">
+          <motion.section 
+        ref={containerRef}
+        id="work" 
+        style={{ 
+          y, 
+          scaleX, 
+          scaleY,
+          borderBottomLeftRadius: borderRadius,
+          borderBottomRightRadius: borderRadius
+        }}
+        className="relative bg-black shadow-2xl z-30"
+      >
       <Timeline data={timelineData} />
-    </section>
+    </motion.section>
   );
 } 

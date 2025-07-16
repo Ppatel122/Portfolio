@@ -8,7 +8,7 @@ import { MacbookWindow } from "./ui/macbook-window";
 
 export default function LandingScreen() {
   return (
-    <div id="home">
+    <div id="home" className="relative z-50">
       <AuroraBackground className="dark:bg-black bg-black">
         <div className="w-full max-w-7xl px-6 md:px-12 lg:px-24">
           <MacbookWindow>

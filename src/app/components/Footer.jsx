@@ -5,7 +5,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-black text-white py-20 border-t border-[#1a1a1a]">
+    <footer id="contact" className="sticky bottom-0 bg-white text-black py-20 min-h-[50vh] flex items-end z-10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Section */}
@@ -21,7 +21,7 @@ export default function Footer() {
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-gray-400 mb-6"
+                className="text-gray-600 mb-6"
               >
                 Building software that empowers communities
               </motion.p>
@@ -44,24 +44,24 @@ export default function Footer() {
                 className="flex justify-center space-x-8"
               >
                 <a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://linkedin.com/in/pranj-patel" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-black transition-colors"
                 >
                   <FaLinkedin className="w-7 h-7" />
                 </a>
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/Ppatel122" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-black transition-colors"
                 >
                   <FaGithub className="w-7 h-7" />
                 </a>
                 <a 
                   href="mailto:pranj1012@gmail.com" 
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-black transition-colors"
                 >
                   <HiOutlineMail className="w-7 h-7" />
                 </a>
@@ -74,7 +74,7 @@ export default function Footer() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mt-16 text-gray-400"
+          className="text-center mt-16 text-gray-500"
         >
           © 2025 Pranj Patel. All rights reserved.
         </motion.div>

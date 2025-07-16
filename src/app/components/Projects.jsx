@@ -192,7 +192,7 @@ export default function Projects() {
     };
 
     return (
-      <section id="projects" className="py-20 bg-black">
+      <section id="projects" className="relative z-40 py-20 bg-black">
         <div className="container mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
