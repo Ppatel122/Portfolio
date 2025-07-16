@@ -70,6 +70,16 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("fixed inset-x-0 top-0 z-[100] w-full", className)}
+      animate={{
+        opacity: visible ? 1 : 0,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut"
+      }}
+      style={{
+        pointerEvents: visible ? 'auto' : 'none'
+      }}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
