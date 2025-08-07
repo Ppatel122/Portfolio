@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -29,8 +30,20 @@ export default function Footer() {
 
 
   return (
-    <footer id="contact" className="bg-black text-white pt-24 pb-8 min-h-[80vh] flex items-center z-10">
-      <div className="container mx-auto px-4">
+    <footer id="contact" className="bg-black text-white pt-24 pb-8 min-h-[80vh] flex items-center z-10 relative overflow-hidden">
+      {/* Grid background */}
+      <div
+        className={cn(
+          "absolute inset-0 z-0",
+          "[background-size:20px_20px]",
+          "[background-image:linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]",
+          "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]"
+        )}
+      />
+      {/* Radial gradient mask for a subtle fade toward edges */}
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
           
           {/* Left Section */}
@@ -43,14 +56,16 @@ export default function Footer() {
             >
               {/* Profile Picture */}
               <div className="flex justify-center mb-6">
-                <div className="bg-black p-2 rounded-xl border border-[#2D2D2D]">
-                  <Image
-                    src="/profile.png"
-                    alt="Pranj Patel"
-                    width={160}
-                    height={160}
-                    className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-lg object-cover"
-                  />
+                <div className="bg-black p-2 rounded-2xl">
+                  <div className="bg-white p-2 rounded-xl border border-[#2D2D2D]">
+                    <Image
+                      src="/profile.png"
+                      alt="Pranj Patel"
+                      width={160}
+                      height={160}
+                      className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-lg object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               

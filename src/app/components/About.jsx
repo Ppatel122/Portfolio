@@ -9,7 +9,7 @@ export default function About({ sectionRef }) {
     <section 
       id="about"
       ref={sectionRef}
-      className="relative z-40 min-h-screen bg-black py-20"
+      className="relative z-40 min-h-screen bg-black pt-20 pb-6"
     >
       <div className="container mx-auto px-4">
         {/* Centered Title */}

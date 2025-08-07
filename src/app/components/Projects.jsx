@@ -88,7 +88,7 @@ const JavaIcon = () => (
 const projects = [
   {
     title: "Orqa",
-    date: "In Progress",
+    date: "August 2025",
     tech: ["Vite", "React", "JavaScript", "MongoDB"],
     description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration between teachers and students to reduce workload while supporting student learning.",
     image: "/orqa.jpg",
@@ -210,7 +210,8 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                  <GlareCard 
+                   <GlareCard 
+                    disableGlare
                     className={`bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a] ${
                       getProjectLink(project) ? 'cursor-pointer' : ''
                     }`}
