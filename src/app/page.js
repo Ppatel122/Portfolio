@@ -30,6 +30,14 @@ export default function Home() {
       <About sectionRef={aboutSectionRef} />
       <Projects />
       <Work />
+      
+      {/* Separator line between Work and Footer */}
+      <div className="w-full bg-black pt-32">
+        <div className="container mx-auto px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+        </div>
+      </div>
+      
       <Footer />
     </div>
   );

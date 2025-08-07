@@ -40,9 +40,9 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Developed automated test scripts in Python to verify user functionality within the SeisWare app, improving test coverage by 60% and reducing manual testing effort.</li>
-            <li>Performed black-box testing on new features, identifying critical bugs and ensuring smooth integration with existing functionalities before release.</li>
-            <li>Designed comprehensive test plans for new application modules, ensuring thorough validation of features and adherence to quality standards throughout the development lifecycle.</li>
+            <li>Developed automated test scripts in Python to validate common user workflows across the SeisWare app, increasing test coverage by 70% and saving the QA team 15 hours of manual testing per release.</li>
+            <li>Created a system-wide test plan for a major release of the SeisWare app, incorporating load variations and edge case scenarios, uncovering 6 critical bugs pre-release and causing a 40% reduction in post-release issues.</li>
+            <li>Conducted black-box testing on new features, identifying critical bugs and ensuring seamless integration with existing functionality before release.</li>
           </ul>
         </GlareCard>
       </div>
@@ -81,9 +81,9 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Refactored the SeisWare windows application codebase to integrate over unique 40 data types into a cohesive multi-CRUD architecture.</li>
-            <li>Implemented batch processing in all CRUD operations across the codebase, reducing overhead and improving the performance of seismic data analysis tools by 60%.</li>
-            <li>Developed comprehensive unit tests for the new multi-CRUD functionality, ensuring robustness and reliability.</li>
+            <li>Led the refactoring of SeisWare’s internal SDK to support batch CRUD operations, improving API efficiency by enabling developers to process multiple seismic data types in a single request.</li>
+            <li>Implemented batch processing logic within the SDK's C++ API layer, reducing network and processing overhead by 60% for high-volume data workflows.</li>
+            <li>Built comprehensive unit tests for the new multi-CRUD endpoints, preventing critical post-deployment bugs and ensuring reliability for SDK app developers.</li>
           </ul>
         </GlareCard>
       </div>
@@ -122,9 +122,9 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Implemented and tested a C++ and gRPC-based messaging library to efficiently route messages between all modules, interfaces, and subsystems of a SCADA system for the Vancouver SkyTrain.</li>
-            <li>Developed robust simulators using Python and gRPC for the messaging library, achieving a 70% increase in the development and testing efficiency of other modules.</li>
-            <li>Performed various bug fixes in C++ and JavaScript on existing data monitoring systems used at the Ottawa LRT, Vancouver SkyTrain and JFK AirTrain having a daily ridership upwards of 10,000/day.</li>
+            <li>Built a C++ and gRPC-based messaging layer for the Vancouver SkyTrain’s SCADA system, enabling real-time routing of train location, signal and sensor data between modules via a pub-sub architecture.</li>
+            <li>Developed simulators in Python and gRPC to emulate the messaging layer, allowing other teams to test their modules independently and accelerate development cycles by 70%.</li>
+            <li>Resolved critical C++ and JavaScript bugs that caused data latency errors in real-time data monitoring systems for the Vancouver SkyTrain, Ottawa LRT, and JFK AirTrain, preventing service interruptions for 10,000+ daily riders.</li>
           </ul>
         </GlareCard>
       </div>
@@ -163,9 +163,8 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Developed and deployed interactive physics web simulations using HTML, CSS and JavaScript to allow 100+ mechanical engineering students each semester to visualize various physics concepts.</li>
-            <li>Revamped the UI of an existing AutoMark software to increase the efficiency of marking students' submissions by 40%.</li>
-            <li>Re-designed the website containing the simulations and tutorials created by past co-op students and updated it to include the content created by my team.</li>
+            <li>Developed and deployed interactive physics web simulations using HTML, CSS and JavaScript, enabling 100+ engineering students each semester to engage deeply with course topics and grasp core concepts faster.</li>
+            <li>Redesigned and modernized the Engineering Graphics course website to be fully responsive, reducing navigation-related student support emails by 30% and improving usability across devices.</li>
           </ul>
         </GlareCard>
       </div>
