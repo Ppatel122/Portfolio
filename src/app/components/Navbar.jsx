@@ -39,7 +39,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              {['Home', 'About', 'Work', 'Projects', 'Contact'].map((link) => (
+              {['Home', 'Background', 'Work', 'Projects', 'Contact'].map((link) => (
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}

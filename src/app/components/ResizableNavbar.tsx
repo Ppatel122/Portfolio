@@ -18,7 +18,7 @@ export default function ResizableNavbar() {
 
   const navItems = [
     { name: "Home", link: "#home" },
-    { name: "About", link: "#about" },
+    { name: "Background", link: "#background" },
     { name: "Projects", link: "#projects" },
     { name: "Work", link: "#work" },
   ];
