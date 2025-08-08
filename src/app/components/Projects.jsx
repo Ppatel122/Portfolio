@@ -108,7 +108,7 @@ const projects = [
     title: "Air Quality Dashboard",
     date: "April 2024",
     tech: ["Remix", "React", "JavaScript", "Azure"],
-    description: "Air quality monitoring application providing real-time visualization of environmental sensor data across the globe, featuring comprehensive historical trend analysis and customizable alert notifications for users.",
+    description: "Air quality monitoring application providing real-time visualization of environmental sensor data across the globe, featuring historical trend analysis and customizable alert notifications for users.",
     image: "/air-quality.png",
     github: "https://github.com/Ppatel122/AirQualityDashboard",
     live: "https://edmonton-air-quality-299f003c3f64.herokuapp.com/"
@@ -116,8 +116,8 @@ const projects = [
   {
     title: "FoodVerse",
     date: "November 2022",
-    tech: ["Java", "Android Studio", "Firebase"],
-    description: "Android application reducing food wastage through secure user authenticated ingredient tracking, comprehensive recipe creation, detailed meal planning and organized shopping lists.",
+    tech: ["Java", "Android", "Firebase"],
+    description: "Android application that reduces food wastage through the use of secure user authenticated ingredient tracking, comprehensive recipe creation, detailed meal planning and organized shopping lists.",
     image: "/foodverse.png",
     github: "https://github.com/CMPUT301F22T15/Foodverse",
     live: "#"
@@ -126,7 +126,7 @@ const projects = [
     title: "Newton's Cradle",
     date: "August 2021",
     tech: ["HTML", "CSS", "JavaScript"],
-    description: "Educational Newton's Cradle simulation allowing dynamic adjustment of physics parameters to analyze collision behavior and momentum transfer, developed for the University of Alberta's Mec E 265 course.",
+    description: "Educational Newton's Cradle simulation allowing adjustment of physics parameters to analyze collision behavior and momentum transfer, developed for the University of Alberta's Mec E 265 course.",
     image: "/newtons-cradle.png",
     github: "https://github.com/Ppatel122/Cradle",
     live: "https://sites.ualberta.ca/~dnobes/Teaching_Section/NOBES_SIM_Newton.html"
@@ -155,6 +155,7 @@ const techIcons = {
   "JavaScript": SiJavascript,
   "Java": JavaIcon,
   "Android Studio": SiAndroidstudio,
+  "Android": SiAndroidstudio,
   "Remix": SiRemix
 };
 
@@ -171,6 +172,7 @@ const techColors = {
     "JavaScript": "text-yellow-400",
     "Java": "text-gray-300",
     "Android Studio": "text-green-400",
+    "Android": "text-green-400",
     "Remix": "text-gray-300"
 };
 

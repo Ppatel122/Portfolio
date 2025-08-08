@@ -12,12 +12,29 @@ export default function Footer() {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add your form submission logic here
+    setStatus("loading");
+    setErrorMessage("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Failed to send message.");
+      }
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err?.message || "Something went wrong");
+    }
   };
 
   const handleChange = (e) => {
@@ -171,10 +188,20 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#2a2a2a] hover:bg-[#3a3a3a] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 focus:ring-offset-[#0a0a0a]"
+                    disabled={status === "loading"}
+                    className={`w-full font-semibold py-3 px-6 rounded-lg transition-colors duration-300 focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 focus:ring-offset-[#0a0a0a] ${
+                      status === "loading" ? "bg-[#1f1f1f] text-gray-400 cursor-not-allowed" : "bg-[#2a2a2a] hover:bg-[#3a3a3a] text-white"
+                    }`}
                   >
-                    Send Message
+                    {status === "loading" ? "Sending..." : "Send Message"}
                   </button>
+
+                  {status === "success" && (
+                    <p className="text-green-400 text-sm text-center mt-2">Thanks! Your message has been sent.</p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-red-400 text-sm text-center mt-2">{errorMessage}</p>
+                  )}
                 </form>
               </div>
             </motion.div>

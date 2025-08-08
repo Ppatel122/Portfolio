@@ -12,7 +12,7 @@ const timelineData = [
     content: (
       <div>
         <GlareCard className="bg-[#0a0a0a] p-6">
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
             <h3 className="text-xl font-semibold text-white">Junior Software QA Engineer</h3>
             <div className="flex items-center space-x-2 text-gray-400">
               <FaCalendarAlt className="w-4 h-4" />
@@ -20,7 +20,7 @@ const timelineData = [
             </div>
           </div>
           
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D]">
                 <Image
@@ -53,7 +53,7 @@ const timelineData = [
     content: (
       <div>
         <GlareCard className="bg-[#0a0a0a] p-6">
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
             <h3 className="text-xl font-semibold text-white">Software Engineer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
               <FaCalendarAlt className="w-4 h-4" />
@@ -61,7 +61,7 @@ const timelineData = [
             </div>
           </div>
           
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D]">
                 <Image
@@ -94,7 +94,7 @@ const timelineData = [
     content: (
       <div>
         <GlareCard className="bg-[#0a0a0a] p-6">
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
             <h3 className="text-xl font-semibold text-white">Software Engineer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
               <FaCalendarAlt className="w-4 h-4" />
@@ -102,7 +102,7 @@ const timelineData = [
             </div>
           </div>
           
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D]">
                 <Image
@@ -135,7 +135,7 @@ const timelineData = [
     content: (
       <div>
         <GlareCard className="bg-[#0a0a0a] p-6">
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
             <h3 className="text-xl font-semibold text-white">Front-End Developer Intern</h3>
             <div className="flex items-center space-x-2 text-gray-400">
               <FaCalendarAlt className="w-4 h-4" />
@@ -143,7 +143,7 @@ const timelineData = [
             </div>
           </div>
           
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D]">
                 <Image

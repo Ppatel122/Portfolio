@@ -25,7 +25,7 @@ export default function LandingScreen({ showContent }) {
             className="text-center"
           >
             <motion.h1 
-              className="text-6xl md:text-7xl font-bold leading-tight mb-8 text-white"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-8 text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ 
                 opacity: showContent ? 1 : 0, 
@@ -35,7 +35,7 @@ export default function LandingScreen({ showContent }) {
             >
               Hi, I'm Pranj Patel<br />
               <motion.span 
-                className="text-gray-400"
+                className="block text-4xl sm:text-5xl md:text-7xl text-gray-400"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ 
                   opacity: showContent ? 1 : 0, 
@@ -63,7 +63,7 @@ export default function LandingScreen({ showContent }) {
                     "Solving the world's most difficult problems",
                     "Creating innovative solutions that matter"
                   ]}
-                  className="text-lg md:text-xl lg:text-2xl text-gray-200"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200"
                   duration={3000}
                 />
               )}

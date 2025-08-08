@@ -64,12 +64,16 @@ const techSphereColors = {
 
 export default function About({ sectionRef }) {
   return (
+    <>
     <section 
       id="background"
       ref={sectionRef}
-      className="relative z-40 min-h-screen bg-black pt-20 pb-6"
+      className="relative z-40 min-h-screen bg-black overflow-visible md:overflow-hidden flex items-start md:items-center"
     >
-      <div className="container mx-auto px-4">
+      {/* Pattern background with soft top/bottom fade */}
+      <div className="absolute inset-0 pattern-bg pointer-events-none" aria-hidden="true" />
+
+      <div className="container mx-auto px-4 relative z-10 w-full py-12 md:py-16">
         {/* Centered Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +86,7 @@ export default function About({ sectionRef }) {
 
         {/* Comet Cards Layout */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             {/* Left Card - Summary (1/3 width on lg) */}
             <motion.div
@@ -92,8 +96,8 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full h-[392px]" theme="work">
-                <div className="h-full flex flex-col overflow-auto">
+              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+                <div className="flex flex-col overflow-visible">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-6">Summary</h3>
                     
@@ -132,10 +136,10 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full h-[392px]" theme="work">
-                <div className="h-full flex flex-col">
+              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+                <div className="flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-6">Skills</h3>
-                  <div className="flex flex-wrap gap-4 overflow-auto pr-1">
+                  <div className="flex flex-wrap gap-4 pr-1">
                     {techSphereIcons.map(({ name, icon: Icon }, index) => {
                       const isCustomSVG = [ViteIcon, FirebaseIcon, JavaIcon, PythonIcon, CPlusPlusIcon, GRPCIcon].includes(Icon);
                       const colorClass = techSphereColors[name] || "text-white";
@@ -159,11 +163,11 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full h-[392px]" theme="work">
-                <div className="h-full flex flex-col overflow-auto">
+              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+                <div className="flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
 
-                  <div className="flex flex-col justify-evenly h-full">
+                  <div className="flex flex-col gap-6 md:justify-evenly md:h-full">
                     {/* NYU */}
                     <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
                       <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D] flex-shrink-0">
@@ -199,5 +203,29 @@ export default function About({ sectionRef }) {
         </div>
       </div>
     </section>
+    
+    <style jsx>{`
+      .pattern-bg {
+        /* Tunable size and dark theme colors */
+        --s: 200px; /* control the size */
+        --c1: #0f0f0f;
+        --c2: #2a2a2a;
+        --c3: #1a1a1a;
+
+        background:
+          repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 50%)
+            calc(var(--s) / 2) calc(var(--s) * tan(30deg) / 2),
+          repeating-conic-gradient(from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 50%);
+        background-size: var(--s) calc(var(--s) * tan(30deg));
+
+        /* Subtle presence over black */
+        opacity: 0.35;
+
+        /* Top/bottom fade for natural blend */
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      }
+    `}</style>
+    </>
   );
 }
