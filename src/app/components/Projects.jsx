@@ -177,21 +177,7 @@ const techColors = {
 };
 
 export default function Projects() {
-    // Helper function to determine which link to use
-    const getProjectLink = (project) => {
-        if (project.title === "Orqa") {
-            return project.live !== "#" ? project.live : null;
-        } else {
-            return project.github !== "#" ? project.github : null;
-        }
-    };
-
-    const handleProjectClick = (project) => {
-        const link = getProjectLink(project);
-        if (link) {
-            window.open(link, '_blank', 'noopener,noreferrer');
-        }
-    };
+    // No card-level click; only explicit buttons are clickable
 
     return (
       <section id="projects" className="relative z-40 py-20 bg-black">
@@ -212,12 +198,9 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                   <GlareCard 
+                  <GlareCard 
                     disableGlare
-                    className={`bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a] ${
-                      getProjectLink(project) ? 'cursor-pointer' : ''
-                    }`}
-                    onClick={() => handleProjectClick(project)}
+                    className="bg-[#0a0a0a] rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-[#1a1a1a]"
                   >
                   <div className="relative h-64 group overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
                       {/* Project Icon */}
