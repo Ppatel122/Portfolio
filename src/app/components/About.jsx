@@ -86,7 +86,7 @@ export default function About({ sectionRef }) {
 
         {/* Comet Cards Layout */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:items-stretch">
             
             {/* Left Card - Summary (1/3 width on lg) */}
             <motion.div
@@ -96,7 +96,7 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+              <CometCard className="w-full h-full" theme="work">
                 <div className="flex flex-col overflow-visible">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-6">Summary</h3>
@@ -136,7 +136,7 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+              <CometCard className="w-full h-full" theme="work">
                 <div className="flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-6">Skills</h3>
                   <div className="flex flex-wrap gap-4 pr-1">
@@ -163,13 +163,13 @@ export default function About({ sectionRef }) {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="lg:col-span-1"
             >
-              <CometCard className="w-full md:max-w-[680px] md:mx-auto" theme="work">
+              <CometCard className="w-full h-full" theme="work">
                 <div className="flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
 
                   <div className="flex flex-col gap-6 md:justify-evenly md:h-full">
                     {/* NYU */}
-                    <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
+                    {/* <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
                       <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D] flex-shrink-0">
                         <Image src="/NYU.png" alt="NYU Logo" fill className="object-cover" />
                       </div>
@@ -181,7 +181,7 @@ export default function About({ sectionRef }) {
                       </div>
                     </div>
 
-                    <div className="border-t border-[#2D2D2D] my-4 md:my-6" />
+                    <div className="border-t border-[#2D2D2D] my-4 md:my-6" /> */}
 
                     {/* UofA */}
                     <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
@@ -193,6 +193,12 @@ export default function About({ sectionRef }) {
                         <p className="text-gray-300 text-sm">BSc. in Software Engineering</p>
                         <p className="text-gray-400 text-xs mt-1">September 2019 - April 2024</p>
                         
+                        <div className="mt-3">
+                          <p className="text-gray-300 text-xs font-medium mb-2">Relevant Coursework:</p>
+                          <p className="text-gray-400 text-xs leading-relaxed">
+                            Data Structures & Algorithms, Object-Oriented Design, Software Requirements, Software Testing, Database Management, Operating Systems, Parallel Programming, Searching and Planning in AI, Intelligent Systems
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
