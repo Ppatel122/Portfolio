@@ -169,7 +169,7 @@ export default function About({ sectionRef }) {
 
                   <div className="flex flex-col gap-6 md:justify-evenly md:h-full">
                     {/* NYU */}
-                    {/* <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
+                    <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
                       <div className="relative w-12 h-12 rounded-md overflow-hidden border border-[#2D2D2D] flex-shrink-0">
                         <Image src="/NYU.png" alt="NYU Logo" fill className="object-cover" />
                       </div>
@@ -181,7 +181,7 @@ export default function About({ sectionRef }) {
                       </div>
                     </div>
 
-                    <div className="border-t border-[#2D2D2D] my-4 md:my-6" /> */}
+                    <div className="border-t border-[#2D2D2D] my-4 md:my-6" />
 
                     {/* UofA */}
                     <div className="flex items-start gap-5 md:gap-6 py-2 md:py-4">
@@ -193,12 +193,6 @@ export default function About({ sectionRef }) {
                         <p className="text-gray-300 text-sm">BSc. in Software Engineering</p>
                         <p className="text-gray-400 text-xs mt-1">September 2019 - April 2024</p>
                         
-                        <div className="mt-3">
-                          <p className="text-gray-300 text-xs font-medium mb-2">Relevant Coursework:</p>
-                          <p className="text-gray-400 text-xs leading-relaxed">
-                            Data Structures & Algorithms, Object-Oriented Design, Software Requirements, Software Testing, Database Management, Operating Systems, Parallel Programming, Searching and Planning in AI, Intelligent Systems
-                          </p>
-                        </div>
                       </div>
                     </div>
                   </div>
