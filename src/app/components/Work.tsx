@@ -41,7 +41,7 @@ const timelineData = [
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
             <li>Developed automated test scripts in Python to validate common user workflows across the SeisWare app, increasing test coverage by 70% and saving the QA team 15 hours of manual testing per release.</li>
-            <li>Created a system-wide test plan for a major release of the SeisWare app, incorporating load variations and edge case scenarios, uncovering 6 critical bugs pre-release and causing a 40% reduction in post-release issues.</li>
+            <li>Created a system-wide test plan for a major release of the SeisWare app, incorporating load variations and edge case scenarios, uncovering 6 critical bugs pre-release and preventing 40% of post-release issues.</li>
             <li>Conducted black-box testing on new features, identifying critical bugs and ensuring seamless integration with existing functionality before release.</li>
           </ul>
         </GlareCard>
@@ -81,9 +81,9 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Led the refactoring of SeisWare’s internal SDK to support batch CRUD operations, improving API efficiency by enabling developers to process multiple seismic data types in a single request.</li>
+            <li>Led the refactoring of SeisWare’s internal SDK to support batch CRUD operations, reducing redundant API requests by 80% by allowing multiple objects to be handled in one API request.</li>
             <li>Implemented batch processing logic within the SDK's C++ API layer, reducing network and processing overhead by 60% for high-volume data workflows.</li>
-            <li>Built comprehensive unit tests for the new multi-CRUD endpoints, preventing critical post-deployment bugs and ensuring reliability for SDK app developers.</li>
+            <li>Built comprehensive unit tests for the new multi-CRUD endpoints, achieving 95% code coverage and  preventing critical post-deployment bugs, ensuring reliability for SDK app developers.</li>
           </ul>
         </GlareCard>
       </div>
@@ -122,7 +122,7 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
-            <li>Built a C++ and gRPC-based messaging layer for the Vancouver SkyTrain’s SCADA system, enabling real-time routing of train location, signal and sensor data between modules via a pub-sub architecture.</li>
+            <li>Built a C++ and gRPC messaging layer for the Vancouver SkyTrain’s SCADA system, enabling real-time routing of 1000+ critical train, signal, and sensor messages/second between modules via a pub-sub architecture.</li>
             <li>Developed simulators in Python and gRPC to emulate the messaging layer, allowing other teams to test their modules independently and accelerate development cycles by 70%.</li>
             <li>Resolved critical C++ and JavaScript bugs that caused data latency errors in real-time data monitoring systems for the Vancouver SkyTrain, Ottawa LRT, and JFK AirTrain, preventing service interruptions for 10,000+ daily riders.</li>
           </ul>
