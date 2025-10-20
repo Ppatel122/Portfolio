@@ -13,7 +13,7 @@ const timelineData = [
       <div>
         <GlareCard className="bg-[#0a0a0a] p-6">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
-            <h3 className="text-xl font-semibold text-white">Junior Software QA Engineer</h3>
+            <h3 className="text-xl font-semibold text-white">Junior Software Engineer</h3>
             <div className="flex items-center space-x-2 text-gray-400">
               <FaCalendarAlt className="w-4 h-4" />
               <span className="text-sm">Sep 2024 - Apr 2025</span>
@@ -40,9 +40,9 @@ const timelineData = [
           </div>
           
           <ul className="list-disc list-outside text-gray-400 space-y-2 pl-5">
+            <li>Developed an importer to enable seamless importing of 1,000,000+ wells from the TGS Data Lake API into SeisWare projects, automating large-scale data ingestion for users.</li>
             <li>Developed automated test scripts in Python to validate common user workflows across the SeisWare app, increasing test coverage by 70% and saving the QA team 15 hours of manual testing per release.</li>
             <li>Created a system-wide test plan for a major release of the SeisWare app, incorporating load variations and edge case scenarios, uncovering 6 critical bugs pre-release and preventing 40% of post-release issues.</li>
-            <li>Conducted black-box testing on new features, identifying critical bugs and ensuring seamless integration with existing functionality before release.</li>
           </ul>
         </GlareCard>
       </div>

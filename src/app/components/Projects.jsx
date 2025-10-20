@@ -88,7 +88,7 @@ const JavaIcon = () => (
 const projects = [
   {
     title: "Orqa",
-    date: "August 2025",
+    date: "October 2025",
     tech: ["Vite", "React", "JavaScript", "MongoDB"],
     description: "Educational platform generating AI-powered curriculum-aligned questions and enabling real-time collaboration between teachers and students to reduce workload while supporting student learning.",
     image: "/orqa.jpg",
